@@ -44,7 +44,6 @@ async def instant(tone: str = "enthusiastic", language: str = "English", sentenc
         reply = "The announcement is taking longer than expected. Please refresh to try again."
     except Exception as err:
         # Anything else thrown above (network error, bad API key, etc.) lands here.
-        # This is Python's version of Go's `if err != nil`, but caught rather than returned.
         reply = f"Sorry, something went wrong reaching the model: {err}"
 
     reply = reply.replace("\n", "<br/>")
